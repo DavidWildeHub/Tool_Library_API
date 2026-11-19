@@ -18,13 +18,16 @@ class ToolStore:
         return self.tools.get(key)
 
 
-    def update(self,key):
-        self.
-        tool = ts.get(key)
-        if(tool == 0):
+    def update(self,key,updateName=None,updateCategory=None):
+        tool = self.tools.get(key)
+        if(tool is None):
             return None
-        else:
-            return tool
+        if updateName is not None:
+            tool["name"] = updateName
+        if updateCategory is not None:
+            tool["category"] = updateCategory
+        return tool
 
-    def remove():
-        a
+    
+    def remove(self,key):
+        return self.tools.pop(key, None)
